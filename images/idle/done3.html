@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myButton {
+            background-color: #44c767;
+            border-radius: 28px;
+            border: 1px solid #18ab29;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #2f6627;
+        }
+
+        .myButton:hover {
+            background-color: #5cbf2a;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+    <script>
+        let TotalImgCount = 8;
+        let count = 1;
+        function changeImage() {
+
+            if (count >= TotalImgCount) {
+                console.log(count, "Done");
+                count = TotalImgCount;
+            }
+            else {
+                document.getElementById('displayImage').src = count + ".png";
+                console.log(count);
+                count++;
+                setTimeout(changeImage, 500);
+            }
+        }
+
+        let TotalImgCount1 = 7;
+        let count1 = 1;
+        function changeImage1() {
+
+            if (count1 >= TotalImgCount1) {
+                console.log(count1, "Done");
+                count1 = 1;
+            }
+            else {
+                document.getElementById('displayImage').src = "../kick/"+ count1 + ".png";
+                console.log(count1);
+                count1++;
+                setTimeout(changeImage1, 500);
+            }
+        }
+
+        let TotalImgCount2 = 7;
+        let count2 = 1;
+        function changeImage2() {
+
+            if (count2 >= TotalImgCount2) {
+                console.log(count2, "Done");
+                count2 = 1;
+            }
+            else {
+                document.getElementById('displayImage').src = "../punch/"+ count2 + ".png";
+                console.log(count2);
+                count2++;
+                setTimeout(changeImage2, 500);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Martial Arts</h1>
+    <img src="1.png" id="displayImage" width="500" height="500">
+    <input class="myButton" type="button" onclick="changeImage()" value="IDLE" />
+    <input class="myButton" type="button" onclick="changeImage1()" value="Kick" />
+    <input class="myButton" type="button" onclick="changeImage2()" value="Punch" />
+
+</body>
+
+</html>
